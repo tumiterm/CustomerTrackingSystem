@@ -1,0 +1,151 @@
+﻿@model CustomerTrackingSystem.DTO.CustomerDTO
+
+<style>
+    .card-header, .head {
+        background-color: darkred;
+    }
+
+    .res {
+        margin-right: 10px;
+    }
+
+    .form-control {
+        border-color: black;
+    }
+
+    thead {
+        background-color: darkred;
+    }
+
+    th {
+        color: white;
+    }
+</style>
+
+<div class="col-xl-12">
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fa fa-user-circle me-1 text-white"></i>
+            <span class="text-white">Customer Registration<span class="text-bold"></span></span>
+        </div>
+
+        <div class="card-body">
+            <form asp-action="UpsertCustomer">
+                <div class="row">
+
+                    <input name="CustomerId" value="@ViewData["Id"]" hidden />
+
+                    <div class="col-xl-12">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fa fa-user-circle me-1 text-white"></i>
+                                <span class="text-white">Customer Details<span class="text-bold"></span></span>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label class="control-label">Customer Name</label>
+                                    <div class="input-group input1">
+                                        <input asp-for="CustomerName" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label class="control-label">VAT Number</label>
+                                    <div class="input-group">
+                                        <input asp-for="VATNumber" class="form-control idNum" />
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-12">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fa fa-user-circle me-1 text-white"></i>
+                                <span class="text-white">Customer Address Details<span class="text-bold"></span></span>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="form-group col-md-3">
+                                        <label class="control-label">Street / Complex No</label>
+                                        <div class="input-group">
+                                            <input asp-for="StreetComplex" class="form-control" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        <label class="control-label">City</label>
+                                        <div class="input-group">
+                                            <input asp-for="City" class="form-control" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        <label class="control-label">Suburb</label>
+                                        <div class="input-group">
+                                            <input asp-for="Surburb" class="form-control" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        <label class="control-label">Postal Code</label>
+                                        <div class="input-group">
+                                            <input asp-for="PostalCode" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-12">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fa fa-user-circle me-1 text-white"></i>
+                                <span class="text-white">Customer Contact Details<span class="text-bold"></span></span>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label class="control-label">Contact Person</label>
+                                        <div class="input-group">
+                                            <input asp-for="ContactPersonName" class="form-control" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label class="control-label">Telephone</label>
+                                        <div class="input-group">
+                                            <input asp-for="Telephone" class="form-control" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label class="control-label">Email</label>
+                                        <div class="input-group">
+                                            <input asp-for="ContactPersonEmail" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12 mt-1">
+                        <div class="form-group col-md-12 mt-2" style="background-color:whitesmoke;">
+                            <button type="submit" class="btn btn-success save"><i class="fa fa-save"></i> Save</button>
+                            <a class="btn btn-danger float-end" asp-action="Settings" asp-controller="Auth"><i class="fa fa-window-close"></i> Exit</a>
+                            <button type="reset" class="btn btn-outline-warning float-end res"><i class="fa fa-undo"></i> Reset</button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>

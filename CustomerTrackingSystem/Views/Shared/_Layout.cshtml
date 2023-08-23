@@ -1,0 +1,132 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Customer Tracking</title>
+
+    <link href="~/Theme/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="~/Theme/css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="~/Theme/css/templatemo-kind-heart-charity.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+
+    <script src="https://kit.fontawesome.com/22bd4fd29b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body id="section_1">
+    <header class="site-header" style="background-color:#8b0000">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8 col-12 d-flex flex-wrap">
+                    <p class="d-flex me-4 mb-0">
+                        <i class="me-2"></i>
+                        Itumeleng Oliphant
+                    </p>
+
+                    <p class="d-flex mb-0">
+                        <i class="me-2"></i>
+
+                        <a href="mailto:fortuneismaname@gmail.com">
+                            fortuneismaname@gmail.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+                    <ul class="social-icon">
+                        <li class="social-icon-item">
+                            <a href="https://twitter.com/forekinstitute" class="social-icon-link fa fa-twitter"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="https://www.facebook.com/ForekInstitute" class="social-icon-link fa fa-facebook"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="https://www.instagram.com/forekinstituteoftechnology/" class="social-icon-link fa fa-instagram"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="https://www.youtube.com/@@forekinstituteoftechnology2257" class="social-icon-link fa fa-linkedin"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="https://www.forek.co.za" class="social-icon-link fa fa-github"></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" asp-action="Index" asp-controller="Home">
+                <img src="~/Theme/images/Logo.png" class="logo img-fluid" alt="Customer Logo">
+                <span style="color:#8b0000">
+                    Customer Tracking
+                    <small>Developed by IF Oliphant - For ArkSoft</small>
+                </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#"><i class="fa fa-house"></i> Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" asp-action="ViewCustomers" asp-controller="CustomerManagement"><i class="fa fa-eye"></i> View Customers</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" asp-action="UpsertCustomer" asp-controller="CustomerManagement"><i class="fa fa-plus-circle"></i> Add Customer</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero-section hero-section-full-height">
+            <div class="container-fluid">
+                <div class="row mt-1">
+
+                    @RenderBody()
+                    <partial name="_Notifications" />
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="~/Theme/js/bootstrap.min.js"></script>
+    <script src="~/Theme/js/jquery.sticky.js"></script>
+    <script src="~/Theme/js/click-scroll.js"></script>
+    <script src="~/Theme/js/counter.js"></script>
+    <script src="~/Theme/js/custom.js"></script>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+<script src="~/js/datatables-simple-demo.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+@await RenderSectionAsync("Scripts", required: false)
+
+</html>
